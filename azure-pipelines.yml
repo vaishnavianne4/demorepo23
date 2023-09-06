@@ -29,6 +29,20 @@ steps:
     csmFile: 'storage1.json'
     deploymentMode: 'Incremental'
     overrideParameters: -storageAccountName sg23450901
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'myfirstconnection'
+    subscriptionId: 'c3702a47-ea37-4fe3-b4a5-fe30cd43ff6a'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'demo_rg'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'storage1.json'
+    deploymentMode: 'Incremental'
+    overrideParameters: -storageAccountName sg23450902
+
+  
   
 
 
